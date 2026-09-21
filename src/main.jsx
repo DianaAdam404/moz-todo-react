@@ -6,20 +6,20 @@ import App from "./App.jsx";
 const DATA = [
   {
     id: "topic-0",
-    subject: "Magyar",
-    name: "A Nyugat első nemzedéke",
+    subject: "Hungarian",
+    name: "The first generation of Nyugat",
     completed: true,
   },
   {
     id: "topic-1",
-    subject: "Történelem",
-    name: "A reformkor",
+    subject: "History",
+    name: "The Reform Era",
     completed: false,
   },
   {
     id: "topic-2",
-    subject: "Matematika",
-    name: "Valószínűségszámítás",
+    subject: "Mathematics",
+    name: "Probability",
     completed: false,
   },
   {

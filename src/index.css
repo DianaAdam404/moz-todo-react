@@ -533,6 +533,28 @@ h1 {
   gap: 0.5rem;
 }
 
+.todo-edit-form {
+  align-items: center;
+  display: flex;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.todo-edit-form .todo-text {
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  color: var(--ink);
+  flex: 1;
+  font-size: 1.5rem;
+  min-width: 0;
+  padding: 1rem;
+}
+
+.save-button {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
 .action-button {
   border: 1px solid var(--line);
   border-radius: 5px;
@@ -597,5 +619,207 @@ h1 {
 
   .todo-actions {
     flex-direction: column;
+  }
+}
+
+/* Reference layout */
+body {
+  background: whitesmoke;
+  color: #4d4d4d;
+  font-family: Arial, sans-serif;
+}
+
+.todoapp {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0 auto;
+  max-width: 68rem;
+  min-height: 100vh;
+  padding: 4rem 2.2rem;
+  width: 100%;
+}
+
+.todoapp > * {
+  max-width: 50rem;
+}
+
+.todoapp > h1 {
+  color: #4d4d4d;
+  font-size: 2.4rem;
+  letter-spacing: 0;
+  line-height: 1.15;
+  margin: 0 auto 1.6rem;
+  text-align: center;
+}
+
+.add-form {
+  display: block;
+  margin: 0 auto;
+  max-width: 50rem;
+}
+
+.input__lg {
+  background: white;
+  border: 2px solid #222;
+  border-radius: 0;
+  display: block;
+  font-size: 2.4rem;
+  height: 7rem;
+  padding: 1.2rem;
+  width: 100%;
+}
+
+.input__lg::placeholder {
+  color: transparent;
+}
+
+.btn__primary {
+  background: #000;
+  border: 2px solid #4d4d4d;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+  font-size: 2.4rem;
+  height: 4.8rem;
+  margin-top: 1rem;
+  padding: 0;
+  width: 100%;
+}
+
+.filters {
+  display: flex;
+  gap: 0;
+  margin: 1.2rem auto 0;
+  max-width: 50rem;
+}
+
+.filter-button {
+  background: white;
+  border: 1px solid lightgray;
+  border-radius: 0;
+  color: #4d4d4d;
+  flex: 1;
+  font-size: 1.9rem;
+  padding: 0.8rem 1rem;
+  text-transform: none;
+}
+
+.filter-button + .filter-button {
+  border-left: 0;
+}
+
+.filter-button[aria-pressed="true"] {
+  background: white;
+  border-color: #4d4d4d;
+  color: #4d4d4d;
+  text-decoration: underline;
+}
+
+.todoapp > h2 {
+  font-size: 2.8rem;
+  margin: 3rem auto 1rem;
+  max-width: 50rem;
+}
+
+.todo-list {
+  margin: 0 auto;
+  max-width: 50rem;
+}
+
+.todo {
+  display: block;
+  padding: 0 0 2.4rem;
+}
+
+.todo .c-cb {
+  min-height: 4.4rem;
+  padding-left: 5.6rem;
+}
+
+.todo .c-cb > label::before {
+  background: white;
+  border: 2px solid #565656;
+  border-radius: 0;
+  height: 4.4rem;
+  left: -0.2rem;
+  top: -0.2rem;
+  width: 4.4rem;
+}
+
+.todo .c-cb > label::after {
+  border-color: #4d4d4d;
+  left: 0.8rem;
+  top: 0.9rem;
+}
+
+.todo .c-cb > input:checked + label::before {
+  background: white;
+  border-color: #565656;
+}
+
+.todo-label {
+  display: block !important;
+  padding: 0.8rem 0 !important;
+}
+
+.subject {
+  display: none;
+}
+
+.todo-name {
+  font-size: 1.6rem;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.action-button {
+  background: white;
+  border: 2px solid #565656;
+  border-radius: 0;
+  color: #4d4d4d;
+  flex: 1;
+  font-size: 1.9rem;
+  padding: 0.8rem 1rem;
+}
+
+.delete-button,
+.delete-button:hover {
+  background: #ca3c3c;
+  border-color: #bd2130;
+  color: white;
+}
+
+.note {
+  display: none;
+}
+
+.todo-edit-form {
+  display: block;
+}
+
+.todo-edit-form .todo-text {
+  border: 2px solid #565656;
+  border-radius: 0;
+  font-size: 1.9rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.todo-edit-form .todo-actions {
+  margin-top: 1rem;
+}
+
+@media (max-width: 620px) {
+  .todoapp {
+    padding: 3rem 1.6rem;
+  }
+
+  .filter-button {
+    font-size: 1.6rem;
   }
 }
