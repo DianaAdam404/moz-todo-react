@@ -407,11 +407,11 @@ h1 {
 }
 
 .input__lg {
-  flex: 1;
+  flex: 1 1 auto;
 }
 
 .add-form select {
-  width: 14rem;
+  width: 25rem;
 }
 
 .btn__primary {
@@ -422,7 +422,7 @@ h1 {
   cursor: pointer;
   font-size: 1.4rem;
   font-weight: bold;
-  padding: 0 1.6rem;
+  padding: 0 1.2rem;
   white-space: nowrap;
 }
 
