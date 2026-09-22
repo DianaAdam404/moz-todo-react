@@ -689,7 +689,7 @@ body {
 
 .filters {
   display: flex;
-  gap: 0;
+  gap: 0.8rem;
   margin: 1.2rem auto 0;
   max-width: 50rem;
 }
@@ -706,7 +706,7 @@ body {
 }
 
 .filter-button + .filter-button {
-  border-left: 0;
+  border-left: 1px solid lightgray;
 }
 
 .filter-button[aria-pressed="true"] {

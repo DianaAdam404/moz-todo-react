@@ -14,7 +14,27 @@ function App({ tasks = [] }) {
   const [filter, setFilter] = useState("All");
   const [newTask, setNewTask] = useState("");
   const completedCount = taskItems.filter((task) => task.completed).length;
-  const visibleTasks = taskItems.filter(FILTER_MAP[filter]);
+  const taskList = taskItems
+    .filter(FILTER_MAP[filter])
+    .map((task) => (
+      <Todo
+        id={task.id}
+        name={task.name}
+        completed={task.completed}
+        key={task.id}
+        toggleTaskCompleted={toggleTaskCompleted}
+        deleteTask={deleteTask}
+        editTask={editTask}
+      />
+    ));
+  const filterList = FILTER_NAMES.map((name) => (
+    <FilterButton
+      key={name}
+      name={name}
+      isPressed={name === filter}
+      setFilter={setFilter}
+    />
+  ));
 
   function addTask(event) {
     event.preventDefault();
@@ -32,7 +52,7 @@ function App({ tasks = [] }) {
     setNewTask("");
   }
 
-  function toggleTask(id) {
+  function toggleTaskCompleted(id) {
     setTaskItems((current) =>
       current.map((task) =>
         task.id === id ? { ...task, completed: !task.completed } : task,
@@ -71,30 +91,18 @@ function App({ tasks = [] }) {
           Add
         </button>
       </form>
-      <div className="filters" aria-label="Filter topics">
-        {FILTER_NAMES.map((name) => (
-          <FilterButton
-            key={name}
-            name={name}
-            isPressed={name === filter}
-            setFilter={setFilter}
-          />
-        ))}
+      <div
+        className="filters btn-group stack-exception"
+        aria-label="Filter topics"
+      >
+        {filterList}
       </div>
       <h2 id="list-heading">
         {taskItems.length - completedCount} tasks remaining
       </h2>
       <ul role="list" className="todo-list" aria-labelledby="list-heading">
-        {visibleTasks.length ? (
-          visibleTasks.map((task) => (
-            <Todo
-              key={task.id}
-              {...task}
-              onToggle={toggleTask}
-              onDelete={deleteTask}
-              onEdit={editTask}
-            />
-          ))
+        {taskList.length ? (
+          taskList
         ) : (
           <li className="empty-state">No topics here.</li>
         )}
